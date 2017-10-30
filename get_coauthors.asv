@@ -6,12 +6,12 @@ if nargin == 0
     GSID = 'wDjD46gAAAAJ';
 end
 
-str = urlread(['http://scholar.google.com/citations?view_op=list_colleagues&user=' GSID]);
+str = urlread(['http://scholar.google.com/citations?view_op=list_colleaguesuser=' GSID]);
 pat = '?user=.......AAAAJ';
 
 S = regexp(str,pat);
 if length(S) > 1
-    %S = S(2:end);
+    S = S(2:end);
     
     for i = 1:length(S)
         CAIDs{i,1} = str(S(i)+6:S(i)+17);
@@ -19,4 +19,5 @@ if length(S) > 1
 else
     CAIDs = [];
 end
+<div id="gsc_cods_urls" class="gsc_cods_hide" data-ls="" data-lc="/citations?view_op=list_colleagues&amp;hl=en&amp;json=&amp;user=Au7CXkkAAAAJ" data-sa=""></div>
 
